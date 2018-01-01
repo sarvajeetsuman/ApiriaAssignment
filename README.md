@@ -17,7 +17,7 @@ Your end goal is to create to a application which can upload a excel sheet consi
 1) Ability to edit and delete records.
 2) Use of graphql
 3) Ability to change file format while uploading the excel sheet
-4) Handig error and exception conditons 
+4) Handling error and exception conditons 
   
 Here are somethings we're watching out for:
 
