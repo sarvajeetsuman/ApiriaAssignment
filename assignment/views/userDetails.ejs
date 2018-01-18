@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="/usersdetails">APIRIA</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="/usersdetails">Home</a></li>
+            <li><a href="/usersdetails/uploads">Upload</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% result.forEach(function (t) { %>
+                        <tr>
+                            <td><%= t.name%></td>
+                            <td><%= t.mobile%></td>
+                            <td><%= t.email%></td>
+                            <td><a class="btn btn-success" href="/usersdetails/<%= t._id %>/edit">Edit</a></td>
+                            <td>
+                            <form id="delete-form" action="/usersdetails/<%= t._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                            </form></td>
+                        </tr>
+                    <%})%>
+                </tbody>   
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; APIRIA | jeetcorporate</p>
+    </div>
+<!-- 
+        <a href="/usersdetails/uploads">upload</a> -->
+</body>
+</html>
+
+
+
